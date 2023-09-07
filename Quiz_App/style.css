@@ -1,0 +1,67 @@
+*{
+margin: 0%;
+padding: 0%;
+box-sizing: border-box;
+font-family: gilroy;
+font-weight: 100;
+}
+html,body{
+height: 100%;
+width: 100%;
+}
+    #main{
+            padding-top: 100px;
+        height: 100vh;
+    width:100%;
+    background-color:#001e4d;
+    }
+.app{
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 0px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+.app h1{
+    font-size: 25px;
+    color: #001e4d;
+    border-bottom: 1px solid #aaaa;
+    padding-bottom: 20px;
+
+}
+.quiz{
+    padding: 20px 0;
+
+}
+.quiz h2{
+    font-size: 18px;
+    margin-bottom: 5px;
+
+}
+.btn{
+    background-color: #fff;
+    font-weight:500;
+    width: 100%;
+    border: 1px solid #dadada;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all ease .3S;
+}
+.btn:hover{
+    background-color: #dadada9f;
+}
+#next-btn{
+    background-color: #001e4d;
+        border: none;
+        outline: none;
+        padding: 10px 25px;
+        border-radius: 10px;
+        color: #fff;
+        margin: 20px auto 0;
+        display: none;
+
+}
