@@ -51,8 +51,8 @@ width: 100%;
     cursor: pointer;
     transition: all ease .3S;
 }
-.btn:hover{
-    background-color: #dadada9f;
+.btn:disabled{
+    cursor: no-drop;
 }
 #next-btn{
     background-color: #001e4d;
@@ -64,4 +64,10 @@ width: 100%;
         margin: 20px auto 0;
         display: none;
 
+}
+.correct{
+    background-color: palegreen;
+}
+.incorrect{
+    background-color: palevioletred;
 }

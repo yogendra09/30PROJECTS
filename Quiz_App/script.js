@@ -74,28 +74,73 @@ function showQuestion (){
      button.innerText= ans.text
      button.classList.add('btn');
      $("#ansbtn").append(button);
-     if(answers.correct){
-        button.dataset
-     }
-     button.addEventListener('click',function(){
 
-     })
-    // document.querySelector("#ansbtn").appendChild(button)
+     if(ans.correct){
+        button.dataset.correct = ans.correct
+     }
+     button.addEventListener('click',selectAnswer)
+    
    })
 
 }
 
 
-function resetState(){
-    $("#next-btn").css("display","block");
-    while($("#ansbtn").first()) {
-        console.log("first")
-        $("#ansbtn").remove($("#ansbtn").first());
-    }
+// function resetState(){
+//     $("#next-btn").css("display","block");
+//     while($("#ansbtn").first()) {
+//         console.log("first")
+//         $("#ansbtn").remove($("#ansbtn").first());
+//     }
 
+// }
+
+
+function selectAnswer(e){
+         const selectedBtn= e.target;
+         const isCorrect = selectedBtn.dataset.correct === "true"
+          if(isCorrect){
+            selectedBtn.classList.add('correct')
+            score++;
+          }else{
+            selectedBtn.classList.add("incorrect")
+          }
+        Array.from(document.querySelector("#ansbtn").children).forEach(function(button){
+              
+            if(button.dataset.correct === 'true'){
+                button.classList.add("correct")
+            }
+            button.disabled = true;
+        })
+
+        $("#next-btn").css('display','block')
+}
+
+function showScore(){
+    // resetState();
+    $("#question").html(`you scored ${score} out of ${question.length}`)
+    $("#next-btn").text("play again")
+
+$("#next-btn").css('display','block');
+}
+
+function handleNextButton(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex<question.length){
+        showQuestion();
+    }else{
+        showScore();
+    }
 }
 
 
+$("#next-btn").click((e)=>{
+    if(currentQuestionIndex< question.length){
+        handleNextButton()
+
+    }else{
+        startQuiz();
+    }
+})
 
 
 startQuiz()
